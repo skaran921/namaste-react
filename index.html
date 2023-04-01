@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- react -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+  </body>
+  <script>
+    // const heading = React.createElement(
+    //   "h1",
+    //   {},
+    //   "Hello World from Javascript!"
+    // );
+
+    const parent = React.createElement("div", { id: "parent" }, [
+      React.createElement("div", { id: "p1__child1" }, [
+        React.createElement("h1", {}, "Hello  from Parent1 To Child 1"),
+        React.createElement("h1", {}, "Hello  from Parent1 To Child 2"),
+      ]),
+      React.createElement("div", { id: "p2__child2" }, [
+        React.createElement("h1", {}, "Hello  from Parent2 To Child 1"),
+        React.createElement("h1", {}, "Hello  from Parent2 To Child 2"),
+      ]),
+    ]);
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+
+    root.render(parent);
+
+    // const heading = document.createElement("h1");
+    // heading.innerHTML = "Hello World from Javascript!";
+    // const root = document.getElementById("root");
+    // root.appendChild(heading);
+  </script>
+</html>
